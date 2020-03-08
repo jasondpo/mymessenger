@@ -14,7 +14,3 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js'></script>
 </head>
 <body>
-
-<form action="index.php" method="POST">
-    <input type="submit" name="logOut" id="logOut" style="display:block" value="LogOut">
-</form>

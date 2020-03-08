@@ -1,4 +1,3 @@
-
 const rand = Math.floor((Math.random() * 10000) + 1);
 var oldConvo = "";
 var newConvo = "";
@@ -22,7 +21,7 @@ function compareMessageLength() {
             if (newConvo - oldConvo != 0) {
                 oldConvo = newConvo;
                 showMessages();
-                showAlert();
+                // showAlert();
             }
             compareMessageLength();
         });
