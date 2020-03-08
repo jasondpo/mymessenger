@@ -1,17 +1,11 @@
 
+<div id="sendingMessage"></div>
+
 <script src="assets/js/main.js"></script>
-<script src="assets/js/sendingMessage.js"></script>
 
 <script >
-    // setTimeout(() => {
-    //     showMessages();
-    // }, 1000);
 
 // prevent form resubmission on refresh
-if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-}
-
     $('.post-Form').on('submit', function (e) {
         e.preventDefault();
 
@@ -21,10 +15,37 @@ if ( window.history.replaceState ) {
             data: $('.post-Form').serialize(),
             success: function () {
                 $(".postField-message").val("");
-                showMessages();
+                sendingMessage();
             }
         });
     });
+
+// Sending animation
+var sending = [
+    "Sending",
+    "Sending.",
+    "Sending..",
+    "Sending...",
+    "Please refresh this page"
+]
+
+var t = 0
+var u = 0
+var sendPending;
+
+function sendingMessage() {
+    sendPending = setInterval(function () {
+        t++
+        if (t == 4) { t = 0; u++ }
+        $("#sendingMessage").html(sending[t]);
+    }, 500);
+}
+
+// Stop sending animation
+function stopSendingMessage(){
+    clearTimeout(sendPending);
+    $("#sendingMessage").html("");
+}
 
 </script>
 

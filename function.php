@@ -11,13 +11,12 @@ if (isset($_POST["logOut"])){
 }
 
 // Add new information to messages.json 
-
     $json2 = file_get_contents("assets/js/messages.json");
     $data2 = json_decode($json2, true);
 
     if($_POST['userMessage']!=null){
         $message2 = $_POST['userMessage'];
-        $name2 = "Lauren";
+        $name2 = "Jason";
         $newData2 = array('name' => $name2, 'message' => $message2);
 
         if(end($data2)!= $newData2){

@@ -18,10 +18,10 @@ function compareMessageLength() {
     setTimeout(() => {
         $.getJSON("assets/js/messages.json" + "#" + rand, function (result) {
             var jsonStringUpdate = JSON.stringify(result);
+            newConvo = jsonStringUpdate.length
             if (newConvo - oldConvo != 0) {
                 oldConvo = newConvo;
                 showMessages();
-                // showAlert();
             }
             compareMessageLength();
         });
@@ -29,17 +29,18 @@ function compareMessageLength() {
 }
 
 // Show alert when message is recieved
-function showAlert() {
-    document.title = "(1) MyChat";
-}
+// function showAlert() {
+//     document.title = "(1) MyChat";
+// }
 
 // Display messages
+var pending = 0;
 function showMessages() {
+    pending++
     $("#messageApp").html("");
     $.getJSON("assets/js/messages.json" + "#" + rand, function (result) {
         var jsonStringUpdate = JSON.stringify(result);
         lauren = jsonStringUpdate.lastIndexOf("Lauren");
-
         $.each(result, function (i, data) {
             if (data.name == "Jason") {
                 $("#messageApp").prepend("<div class='text-right'><h10>" + data.name + " " + data.message + "</h10></div>")
@@ -48,5 +49,9 @@ function showMessages() {
                 $("#messageApp").prepend("<div class='text-left'><h11>" + data.name + " " + data.message + "</h11></div>")
             }
         });
+        if (pending > 1) {
+            stopSendingMessage();
+        }
     });
 }
+

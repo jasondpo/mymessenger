@@ -148,3 +148,11 @@ h12 {
   margin-left: 50px;
   display: none;
 }
+
+#sendingMessage {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 180px;
+  height: 30px;
+}

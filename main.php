@@ -17,8 +17,11 @@
     </div>
 
 
-
-
+<script>
+//     function stopSendingMessage(){
+//     clearTimeout(sendPending);
+// }
+</script>
 
 <?php include "includes/footer.php"; ?>
 
