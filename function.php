@@ -15,11 +15,19 @@ if (isset($_POST["logOut"])){
 // Add new information to messages.json 
     $json2 = file_get_contents("assets/js/messages.json");
     $data2 = json_decode($json2, true);
+    date_default_timezone_set("America/New_York");
+    $timeStamp =  date("D H:i a");
+
+    if($_SESSION["userID"]=="Jason"){
+        $profile="assets/images/Jason.jpg";
+    }else{
+        $profile="assets/images/Lauren.jpg";
+    }
 
     if($_POST['userMessage']!=null){
         $message2 = $_POST['userMessage'];
         $name2 = $_SESSION["userID"];
-        $newData2 = array('name' => $name2, 'message' => $message2);
+        $newData2 = array('profile' => $profile,'name' => $name2, 'time' => $timeStamp, 'message' => $message2);
 
         if(end($data2)!= $newData2){
             $data2 = array_merge($data2, array($newData2));        

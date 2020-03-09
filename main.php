@@ -1,9 +1,14 @@
 <?php include "includes/header.php"; ?>
-<?php echo $_SESSION["userID"]; ?>
+<div id="userID"><h13><?php echo $_SESSION["userID"]; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<span>Logout</span></h13></div>
 
+<?php 
+    if($_SESSION["userID"] == null){
+        echo '<script>window.location.href = "index.php"</script>';
+    }
+?>
 
 <form action="index.php" method="POST">
-    <input type="submit" name="logOut" id="logOut" style="display:block" value="LogOut">
+    <input type="submit" name="logOut" id="logOut" style="display:none" value="LogOut">
 </form>
 
     <div class="chatContainer">
@@ -15,6 +20,7 @@
             <input type="submit" value="Submit" name="addMessageBtn" class="submitBtn">    
         </form>
     </div>
+
 
 <?php include "includes/footer.php"; ?>
 

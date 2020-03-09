@@ -5,7 +5,11 @@
 
 <script >
 
-// prevent form resubmission on refresh
+ // Logout   
+    $("h13 span").click(function(){
+        $("#logOut").click();
+    })
+// Post message with jquery
     $('.post-Form').on('submit', function (e) {
         e.preventDefault();
 
@@ -20,7 +24,7 @@
         });
     });
 
-// Sending animation
+// Sending message animation
 var sending = [
     "Sending",
     "Sending.",
@@ -49,6 +53,18 @@ function stopSendingMessage(){
     audio.play();
 }
 
+// Reset document title
+$(".postField-message").focus(function(){
+    document.title = "inDobnito";
+});
+
+// Hide messenger
+    $(window).focus(function(){
+        $("#overlay").fadeOut(.25)
+    })
+    $(window).blur(function(){
+        $("#overlay").fadeIn(.25)
+    })
 </script>
 
 </body>

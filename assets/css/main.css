@@ -16,8 +16,20 @@ textarea:focus, input:focus {
   background-color: white;
   border-radius: 6px;
   margin: 15px;
-  cursor: pointer;
   box-shadow: 0 2.8px 2.2px rgba(93, 113, 134, 0.02), 0 6.7px 5.3px rgba(93, 113, 134, 0.028), 0 12.5px 10px rgba(93, 113, 134, 0.035), 0 22.3px 17.9px rgba(93, 113, 134, 0.042), 0 41.8px 33.4px rgba(93, 113, 134, 0.05), 0 100px 80px rgba(93, 113, 134, 0.07);
+  transition: all .15s linear;
+}
+
+.blue:hover {
+  background-color: #3578E5 !important;
+}
+
+.userBtn:hover {
+  background-color: #c6538c;
+}
+
+.userBtn h12:hover {
+  color: white;
 }
 
 .userBtn-container {
@@ -35,30 +47,65 @@ textarea:focus, input:focus {
   justify-content: center;
 }
 
-h10 {
-  display: inline-block;
-  padding: 10px 12px;
-  background-color: #c6538c;
-  font-size: 14px;
-  color: white;
-  max-width: 240px;
-}
-
-h11 {
-  display: inline-block;
-  padding: 10px 12px;
-  background-color: #f1f0f0;
-  font-size: 14px;
-  max-width: 240px;
-  color: #61656b;
-}
-
 h12 {
   display: block;
   text-align: center;
   padding: 12px;
   color: #61656b;
   letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .10s linear;
+}
+
+h13 {
+  font-size: 13px;
+  color: #333;
+  font-weight: normal;
+  letter-spacing: .02em;
+}
+
+h13 span {
+  color: #c6538c;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+h13 span:hover {
+  text-decoration: underline;
+}
+
+.dateTime {
+  font-size: 11px;
+  height: 10px;
+  text-transform: uppercase;
+  color: #BBB;
+  line-height: 2.5em;
+}
+
+::placeholder {
+  color: #BBB;
+  opacity: 1;
+}
+
+#overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: none;
+}
+
+#userID {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  font-size: 14px;
+  width: 150px;
+  height: 20px;
+  text-align: right;
 }
 
 .chatContainer {
@@ -78,6 +125,8 @@ h12 {
 
 #messageFader {
   position: fixed;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   top: 100px;
   left: 50%;
   margin-left: -200px;
@@ -101,30 +150,6 @@ h12 {
   box-sizing: content-box;
   padding: 14px 14px 0px;
   overflow-x: hidden;
-}
-
-.text-right {
-  position: relative;
-  width: 358px;
-  margin-bottom: 20px;
-  text-align: right;
-}
-
-.text-right h10, .text-right h11 {
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-}
-
-.text-left {
-  position: relative;
-  width: 358px;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.text-left h10, .text-left h11 {
-  border-radius: 20px;
 }
 
 .postField-message {

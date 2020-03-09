@@ -6,13 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyChat</title>
+    <title>inDobnito</title>
     <link rel='stylesheet' href='assets/css/main.css'>
     <?php 
-        if($_SESSION["userID"]=="jason"){
+        if($_SESSION["userID"]=="Jason"){
            echo "<link rel='stylesheet' href='assets/css/jason.css'>";
         }
-        if($_SESSION["userID"]=="lauren"){
+        if($_SESSION["userID"]=="Lauren"){
            echo "<link rel='stylesheet' href='assets/css/lauren.css'>";
         }
     ?>
@@ -22,3 +22,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js'></script>
 </head>
 <body>
+
+<div id="overlay"></div>
+
