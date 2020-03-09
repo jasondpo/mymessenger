@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start();
+
 //  Create Session 
 if(isset($_POST["userSubmitBtn"])){  
     session_start(); 
@@ -16,7 +18,7 @@ if (isset($_POST["logOut"])){
 
     if($_POST['userMessage']!=null){
         $message2 = $_POST['userMessage'];
-        $name2 = "Jason";
+        $name2 = $_SESSION["userID"];
         $newData2 = array('name' => $name2, 'message' => $message2);
 
         if(end($data2)!= $newData2){
@@ -35,6 +37,11 @@ if (isset($_POST["logOut"])){
     file_put_contents('assets/js/messages.json', json_encode($data, JSON_FORCE_OBJECT));
   ?>
 
+<script>
+if ( window.history.replaceState ) {
+window.history.replaceState( null, null, window.location.href );
+}
+</script>
 
 
 

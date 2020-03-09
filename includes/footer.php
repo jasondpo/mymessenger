@@ -42,9 +42,11 @@ function sendingMessage() {
 }
 
 // Stop sending animation
+var audio = new Audio('assets/sound/success.mp3');
 function stopSendingMessage(){
     clearTimeout(sendPending);
-    $("#sendingMessage").html("");
+    $("#sendingMessage").html("");   
+    audio.play();
 }
 
 </script>

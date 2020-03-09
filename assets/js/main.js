@@ -40,7 +40,8 @@ function showMessages() {
     $("#messageApp").html("");
     $.getJSON("assets/js/messages.json" + "#" + rand, function (result) {
         var jsonStringUpdate = JSON.stringify(result);
-        lauren = jsonStringUpdate.lastIndexOf("Lauren");
+        // laurenPos = jsonStringUpdate.lastIndexOf("Lauren");
+        // jasonPos = jsonStringUpdate.lastIndexOf("Jason");
         $.each(result, function (i, data) {
             if (data.name == "Jason") {
                 $("#messageApp").prepend("<div class='text-right'><h10>" + data.name + " " + data.message + "</h10></div>")
