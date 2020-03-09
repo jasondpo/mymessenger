@@ -16,7 +16,7 @@ if (isset($_POST["logOut"])){
     $json2 = file_get_contents("assets/js/messages.json");
     $data2 = json_decode($json2, true);
     date_default_timezone_set("America/New_York");
-    $timeStamp =  date("D H:i a");
+    $timeStamp =  date("D g:i a");
 
     if($_SESSION["userID"]=="Jason"){
         $profile="assets/images/Jason.jpg";
