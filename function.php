@@ -39,7 +39,7 @@ if (isset($_POST["logOut"])){
     $json = file_get_contents("assets/js/messages.json");
     $data = json_decode($json, true);
 
-        if(count($data)>=11){
+        if(count($data)>=21){
             unset($data[0]);
         };      
     file_put_contents('assets/js/messages.json', json_encode($data, JSON_FORCE_OBJECT));

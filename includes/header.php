@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inDobnito</title>
+    <title>LyteChat</title>
     <link rel='stylesheet' href='assets/css/main.css'>
     <?php 
         if($_SESSION["userID"]=="Jason"){
@@ -23,5 +23,5 @@
 </head>
 <body>
 
-<div id="overlay"></div>
+<div class="overlay"></div>
 

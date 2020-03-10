@@ -31,8 +31,8 @@ function compareMessageLength() {
 
 // Display messages
 var pending = 0;
-var laurenPos ="";
-var jasonPos ="";
+var laurenPos = "";
+var jasonPos = "";
 function showMessages() {
     pending++
     $("#messageApp").html("");
@@ -42,10 +42,10 @@ function showMessages() {
         jasonPos = jsonStringUpdate.lastIndexOf("Jason");
         $.each(result, function (i, data) {
             if (data.name == "Jason") {
-                $("#messageApp").prepend("<div class='"+data.name+"'><div class='dateTime'>"+data.time+"</div><br/><div class='profilePic'></div><h10>" + data.message + "</h10></div>")
+                $("#messageApp").prepend("<div class='" + data.name + "'><div class='dateTime'>" + data.time + "</div><br/><div class='profilePic'></div><h10>" + data.message + "</h10></div>")
             }
             if (data.name == "Lauren") {
-                $("#messageApp").prepend("</div><div class='Lauren'><div class='dateTime'>"+data.time+"</div><br/><div class='profilePic'></div><h11>" + data.message + "</h11></div>")
+                $("#messageApp").prepend("</div><div class='Lauren'><div class='dateTime'>" + data.time + "</div><br/><div class='profilePic'></div><h11>" + data.message + "</h11></div>")
             }
         });
         if (pending > 1) {
@@ -56,19 +56,18 @@ function showMessages() {
 }
 
 // Show alert when message is recieved
-var lastSender="";
-var userID=$("#userID h13").html();
+var lastSender = "";
+var userID = $("#userID h13").html();
 var userID = userID.charAt(0);
 function showAlert() {
-    if(jasonPos-laurenPos>=0){
-        lastSender="J";
-    }else{
-        lastSender="L";
+    if (jasonPos - laurenPos >= 0) {
+        lastSender = "J";
+    } else {
+        lastSender = "L";
     }
-    if(userID!=lastSender){
-        document.title = "(1) inDobnito";
+    if (userID != lastSender && userID != null) {
+        document.title = "(1) LyteChat";
+        $(".overlay").addClass("overlayMessage");
     }
-
-    
 }
 
